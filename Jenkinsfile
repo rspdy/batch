@@ -3,7 +3,7 @@ pipeline{
    stages{
       stage('exec from batch file'){
          steps{
-         sh New Text Document.bat
+         bat "New Text Document.bat"
          }
       }
    }
