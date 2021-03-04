@@ -38,6 +38,7 @@ agent any
  stage("from l1 to l2"){
             steps{
             echo "stage 2 successss......."
+             echo "user name is ${DEPLOYER_CRED_USR}"
             }
  }
   }
