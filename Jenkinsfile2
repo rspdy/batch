@@ -22,7 +22,8 @@ agent any
                 //environment name: 'L0_service'
             //}
             steps {
-                  echo -e "l0 to l1 migration is success... service id is : ${params.L0_service}\n migration done from ${params.from_server} to ${params.to_server}"
+                  echo "l0 to l1 migration is success... service id is : ${params.L0_service}"
+                  echo "migration done from ${params.from_server} to ${params.to_server}"
                  
             }
         }
