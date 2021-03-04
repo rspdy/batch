@@ -26,10 +26,10 @@ agent any
  stage("from l0 to l1") {
  
             when {
-                //environment name: 'L0_service'
-                expression{ 
-                RAVI == "hola"
-                }
+                environment name: 'RAVI' value : 'hola'
+                //expression{ 
+                //RAVI == "hola"
+                //}
             }
             steps {
                   //echo "l0 to l1 migration is success... service id is : ${params.L0_service}"
