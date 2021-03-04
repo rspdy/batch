@@ -11,7 +11,8 @@ agent any
   
   parameters {
         string(defaultValue: '5f251e5c7f077b69868c8c23114428c8', description: '', name: 'L0_service', trim: false)
-        //string(defaultValue: '11111111111111111111111111111111111', description: '', name: 'L1_service', trim: false)
+        string(defaultValue: '11111', description: '', name: 'from_server', trim: false)
+        string(defaultValue: '00000', description: '', name: 'to_server', trim: false)
     }
     
    
@@ -21,7 +22,8 @@ agent any
                 //environment name: 'L0_service'
             //}
             steps {
-                  echo "l0 to l1 migration is success... service id is : ${params.L0_service} "
+                  echo -e "l0 to l1 migration is success... service id is : ${params.L0_service}\n migration done from ${params.from_server} to ${params.to_server}"
+                 
             }
         }
         
