@@ -17,14 +17,14 @@ agent any
         password(defaultValue: '0000', description: '', name: 'enter_password')
     }
       environment { 
-             deployer_CRED= credentials('deployer_07') 
+             DEPLOYER_CRED= credentials('deployer_07') 
         }
   
   stages{
  stage("from l0 to l1") {
             when {
                 //environment name: 'L0_service'
-                expression{ params.defaultValue == $deployer_cred_PSW}
+                expression{ params.defaultValue == $DEPLOYER_CRED_PSW}
             }
             steps {
                   //echo "l0 to l1 migration is success... service id is : ${params.L0_service}"
