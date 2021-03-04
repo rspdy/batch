@@ -26,7 +26,7 @@ agent any
  stage("from l0 to l1") {
  
             when {
-                environment name: 'RAVI' , value: 'hola'
+                environment name: 'RAVI' , value: '1234'
                 //expression{ 
                 //RAVI == "hola"
                 //}
