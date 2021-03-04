@@ -18,6 +18,7 @@ agent any
     }
       environment { 
              DEPLOYER_CRED= credentials('deployer_07') 
+             Deployer_pass = ${DEPLOYER_CRED_PSW}
         }
   
   stages{
@@ -26,7 +27,7 @@ agent any
             when {
                 //environment name: 'L0_service'
                 expression{ 
-                params.defaultValue == ${DEPLOYER_CRED_PSW}
+                params.defaultValue == env.Deployer_pass
                 }
             }
             steps {
