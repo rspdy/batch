@@ -27,7 +27,7 @@ agent any
             when {
                 //environment name: 'L0_service'
                 expression{ 
-                params.defaultValue == env.Deployer_pass
+                params.defaultValue == "0000"
                 }
             }
             steps {
