@@ -18,7 +18,7 @@ agent any
     }
       environment { 
              DEPLOYER_CRED= credentials('deployer_07') 
-             Deployer_pass = ${DEPLOYER_CRED_PSW}
+             Deployer_pass = "${DEPLOYER_CRED_PSW}"
         }
   
   stages{
