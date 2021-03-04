@@ -1,0 +1,37 @@
+pipeline{
+
+agent any
+
+
+//properties([
+  //parameters([
+  //string(defaultValue: 'L0 to L1', description: 'migrating from L0 to L1', name: 'L0 to L1', trim: false), 
+  //string(defaultValue: 'L1 to L2', description: 'migrating from L1 to L2', name: 'L1 to L2', trim: false)])
+  //])
+  
+  parameters {
+        booleanParam(name: 'L0_to_L1', defaultValue: false, description: 'from l0 to l1')
+        booleanParam(name: 'L1_to_L2', defaultValue: false, description: 'from l1 to l2')
+    }
+  
+  stages{
+ stage("from l0 to l1") {
+            when {
+                environment name: 'L0_to_L1', value: 'true'
+            }
+            steps {
+                  echo "l0 to l1 migration is success "
+            }
+        }
+        
+ stage("from l1 to l2"){
+            when{
+            environment name: "L1_to_L2", value: "true"
+            }
+            steps{
+            echo "l1 to l2 migration is success"
+            }
+ }
+  }
+  
+  }
