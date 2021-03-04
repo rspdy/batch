@@ -1,0 +1,38 @@
+pipeline{
+
+agent any
+
+
+//properties([
+  //parameters([
+  //string(defaultValue: 'L0 to L1', description: 'migrating from L0 to L1', name: 'L0 to L1', trim: false), 
+  //string(defaultValue: 'L1 to L2', description: 'migrating from L1 to L2', name: 'L1 to L2', trim: false)])
+  //])
+  
+  parameters {
+        string(defaultValue: '5f251e5c7f077b69868c8c23114428c8', description: '', name: 'L0_service', trim: false)
+        string(defaultValue: '11111111111111111111111111111111111', description: '', name: 'L1_service', trim: false)
+    }
+    
+   
+  stages{
+ stage("from l0 to l1") {
+            when {
+                environment name: 'L0_to_L1', value: 'true'
+            }
+            steps {
+                  echo "l0 to l1 migration is success... service id is : ${L0_service} "
+            }
+        }
+        
+ stage("from l1 to l2"){
+            when{
+            environment name: "L1_to_L2", value: "true"
+            }
+            steps{
+            echo "l1 to l2 migration is success... service id is : ${L1_service}"
+            }
+ }
+  }
+  
+  }
