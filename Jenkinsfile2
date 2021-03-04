@@ -20,15 +20,12 @@ agent any
             //when {
                 environment name: 'L0_service'
             //}
-            //steps {
+            steps {
                   echo "l0 to l1 migration is success... service id is : ${params.L0_service} "
             }
         }
         
  stage("from l1 to l2"){
-            //when{
-            //environment name: 'L1_service'
-            //}
             steps{
             echo "stage 2 successss......."
             }
