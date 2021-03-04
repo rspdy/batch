@@ -11,14 +11,14 @@ agent any
   
   parameters {
         string(defaultValue: '5f251e5c7f077b69868c8c23114428c8', description: '', name: 'L0_service', trim: false)
-        string(defaultValue: '11111111111111111111111111111111111', description: '', name: 'L1_service', trim: false)
+        //string(defaultValue: '11111111111111111111111111111111111', description: '', name: 'L1_service', trim: false)
     }
     
    
   stages{
  stage("from l0 to l1") {
             when {
-                environment name: 'L0_to_L1', value: 'true'
+                environment name: 'L0_service'
             }
             steps {
                   echo "l0 to l1 migration is success... service id is : ${L0_service} "
@@ -26,11 +26,11 @@ agent any
         }
         
  stage("from l1 to l2"){
-            when{
-            environment name: "L1_to_L2", value: "true"
-            }
+            //when{
+            //environment name: 'L1_service'
+            //}
             steps{
-            echo "l1 to l2 migration is success... service id is : ${L1_service}"
+            echo "stage 2 successss......."
             }
  }
   }
