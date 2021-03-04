@@ -19,6 +19,7 @@ agent any
       environment { 
              DEPLOYER_CRED= credentials('deployer_07') 
              Deployer_pass = "${DEPLOYER_CRED_PSW}"
+             RAVI = "hola"
         }
   
   stages{
@@ -27,7 +28,7 @@ agent any
             when {
                 //environment name: 'L0_service'
                 expression{ 
-                params.name == "enter_password"
+                RAVI == "hola"
                 }
             }
             steps {
