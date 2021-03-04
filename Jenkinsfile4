@@ -24,7 +24,7 @@ agent any
  stage("from l0 to l1") {
             when {
                 //environment name: 'L0_service'
-                expression{ params.defaultValue == $DEPLOYER_CRED_PSW}
+                expression{ params.defaultValue == ${DEPLOYER_CRED_PSW}}
             }
             steps {
                   //echo "l0 to l1 migration is success... service id is : ${params.L0_service}"
