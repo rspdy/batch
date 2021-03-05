@@ -11,7 +11,7 @@ agent any
   
   parameters {
         //string(defaultValue: '5f251e5c7f077b69868c8c23114428c8', description: '', name: 'L0_service', trim: false)
-        //string(defaultValue: '11111', description: '', name: 'from_server', trim: false)
+        string(defaultValue: 'default', description: '', name: 'user_id', trim: false)
         //string(defaultValue: '00000', description: '', name: 'to_server', trim: false)
         //credentials(credentialType: 'com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl', defaultValue: 'deployer_07', description: 'only for deployment', name: 'deploy_user', required: false)
         password(defaultValue: '0000', description: '', name: 'enter_password')
@@ -19,6 +19,7 @@ agent any
       environment { 
              DEPLOYER_CRED= credentials('deployer_07') 
              Deployer_pass = "${DEPLOYER_CRED_PSW}"
+             Deployer_name = "${DEPLOYER_CRED_USR}"
              RAVI = "hola"
         }
   
@@ -26,7 +27,9 @@ agent any
  stage("from l0 to l1") {
  
             when {
+                 environment name: 'Deployer_name' , value: "${params.user_id}"
                 environment name: 'Deployer_pass' , value: "${params.enter_password}"
+                
                 //expression{ 
                 //RAVI == "hola"
                 //}
