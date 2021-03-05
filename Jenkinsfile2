@@ -10,9 +10,10 @@ agent any
   //])
   
   parameters {
-        string(defaultValue: '5f251e5c7f077b69868c8c23114428c8', description: '', name: 'L0_service', trim: false)
-        string(defaultValue: '11111', description: '', name: 'from_server', trim: false)
-        string(defaultValue: '00000', description: '', name: 'to_server', trim: false)
+        //string(defaultValue: '5f251e5c7f077b69868c8c23114428c8', description: '', name: 'L0_service', trim: false)
+        //string(defaultValue: '11111', description: '', name: 'from_server', trim: false)
+        //string(defaultValue: '00000', description: '', name: 'to_server', trim: false) 
+        credentials(credentialType: 'com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl', defaultValue: '', description: 'for dev and deploy', name: 'build_credentials', required: true)
     }
     
    
