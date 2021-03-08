@@ -8,30 +8,15 @@ environment{
 }
 
   stages{
- stage("from l0 to l1") {
+ stage("with check") {
  
  when{
 environment name: "User_id" , value: "[ravi]"
 }
     steps{
-    //script{
-    //def specificCause = currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')
-//if (specificCause) {
-    //println("Executed by user $specificCause.userName")
-   
-    //echo "specificCause: $specificCause.userName"
-    //echo "specificCause: ${specificCause.userId}"
-    //def user_id = ${specificCause.userId}
-//}
-
-echo"Ravi stillllll doneeeeeeee..."
-//echo "specificCause: $SPECIFIC_CAUSE.userId"
-echo"Ravi u doneeeeeeee..."
+echo"successsss.."
 echo "${User_id}"
-
-    //}
-    
-    }
+     }
            
         }
         
