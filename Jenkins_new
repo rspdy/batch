@@ -4,6 +4,7 @@ agent any
 
 environment{
  SPECIFIC_CAUSE = currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')
+ User_id = "${SPECIFIC_CAUSE.userId}"
 }
 
   stages{
