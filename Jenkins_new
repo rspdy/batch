@@ -14,10 +14,10 @@ if (specificCause) {
    
     echo "specificCause: $specificCause.userName"
     echo "specificCause: ${specificCause.userId}"
-    def user_name = ${specificCause.userName}
+    def user_id = ${specificCause.userId}
 }
 when{
-expression{user_name == "RaviShankar P"}
+expression{"${user_id}" == "RaviShankar P"}
 }
 
 echo"Ravi u doneeeeeeee..."
