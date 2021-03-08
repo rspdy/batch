@@ -20,9 +20,9 @@ environment{
     //echo "specificCause: ${specificCause.userId}"
     //def user_id = ${specificCause.userId}
 //}
-//when{
-//expression{"${user_id}" == "RaviShankar P"}
-//}
+when{
+expression{"${User_id}" == "ravi"}
+}
 echo"Ravi stillllll doneeeeeeee..."
 //echo "specificCause: $SPECIFIC_CAUSE.userId"
 echo"Ravi u doneeeeeeee..."
