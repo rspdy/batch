@@ -10,6 +10,9 @@ environment{
   stages{
  stage("from l0 to l1") {
  
+ when{
+environment name: "User_id" , value: "ravi"
+}
     steps{
     //script{
     //def specificCause = currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')
@@ -20,9 +23,7 @@ environment{
     //echo "specificCause: ${specificCause.userId}"
     //def user_id = ${specificCause.userId}
 //}
-when{
-expression{"${User_id}" == "ravi"}
-}
+
 echo"Ravi stillllll doneeeeeeee..."
 //echo "specificCause: $SPECIFIC_CAUSE.userId"
 echo"Ravi u doneeeeeeee..."
