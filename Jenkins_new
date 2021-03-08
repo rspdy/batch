@@ -11,7 +11,7 @@ environment{
  stage("from l0 to l1") {
  
  when{
-environment name: "User_id" , value: "[ravi]"
+environment name: "User_id" , value: "[ravi1]"
 }
     steps{
     //script{
@@ -35,6 +35,11 @@ echo "${User_id}"
            
         }
         
+   stage("no check"){
+    steps{
+    echo "no checkpoint here.............."
+    }
+   }     
 }
   
   }
