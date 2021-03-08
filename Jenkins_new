@@ -3,7 +3,7 @@ pipeline{
 agent any
 
 environment{
-def specificCause = currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')
+ SPECIFIC_CAUSE = currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')
 }
 
   stages{
@@ -22,7 +22,8 @@ def specificCause = currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause'
 //when{
 //expression{"${user_id}" == "RaviShankar P"}
 //}
-echo "specificCause: $specificCause.userId"
+echo"Ravi stillllll doneeeeeeee..."
+echo "specificCause: $SPECIFIC_CAUSE.userId"
 echo"Ravi u doneeeeeeee..."
 
     //}
