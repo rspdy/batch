@@ -11,7 +11,7 @@ environment{
  stage("from l0 to l1") {
  
  when{
-environment name: "User_id" , value: "ravi"
+environment name: "User_id" , value: "[ravi]"
 }
     steps{
     //script{
