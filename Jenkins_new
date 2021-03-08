@@ -24,8 +24,9 @@ environment{
 //expression{"${user_id}" == "RaviShankar P"}
 //}
 echo"Ravi stillllll doneeeeeeee..."
-echo "specificCause: $SPECIFIC_CAUSE.userId"
+//echo "specificCause: $SPECIFIC_CAUSE.userId"
 echo"Ravi u doneeeeeeee..."
+echo "${User_id}"
 
     //}
     
